@@ -6,14 +6,12 @@
     --vermelho: #ee2211;
 }
 
-
-
 /* ==================== HEADER ==================== */
 
 .header {
     display: grid;
     justify-items: center;
-    gap: 60px;
+    gap: 3.75rem;
 }
 
 .menu {
@@ -21,18 +19,26 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .menu__link {
     display: inline-block;
     color: var(--black);
 
-    padding: 15px 30px;
-    border-radius: 4px;
+    padding: 0.938rem 1.875rem;
+    border-radius: 2px;
     text-transform: uppercase;
 
     background: var(--white);
+}
+
+.menu__lista:hover {
+    outline: 2px solid var(--vermelho);
+    border-radius: 2px;
 }
 
 /* ==================== CORPO ==================== */
@@ -42,19 +48,8 @@
     max-width: 1050px;
 }
 
-.intro {
-    display: grid;
-    align-content: center;
-    justify-items: end;
-    gap: 20px;
-    position: relative;
-
-    padding: 50px;
-    text-align: right;
-    background: var(--white);
-}
-
-.intro__detail {
+.intro::before {
+    content: "";
     display: inline-block;
     position: absolute;
     top: 30px;
@@ -62,38 +57,70 @@
 
     width: 60px;
     height: 4px;
-    border-radius: 2px;
+    border-radius: 1px;
 
     background: var(--vermelho);
 }
 
+.intro {
+    display: grid;
+    align-content: center;
+    justify-items: end;
+    gap: 1.25rem;
+    position: relative;
+
+    padding: 3.125rem;
+    text-align: right;
+    background: var(--white);
+}
+
+.intro__title {
+    font-size: 2rem;
+}
+
 .intro__cta {
     color: var(--white);
-    padding: 15px 30px;
+    padding: 0.938rem 1.875rem;
     border-radius: 4px;
     text-transform: uppercase;
     background: var(--vermelho);
+    transition: .2s;
+}
+
+.intro__cta:hover {
+    background: #900;
 }
 
 .advantages__title {
     color: rgba(0, 0, 0, .2);
     align-self: center;
-    font-size: 64px;
+    font-size: 4rem;
     text-transform: uppercase;
     text-align: right;
-    padding: 50px;
+    padding: 3.125rem;
+    background-image: url("./img/onda.svg");
 }
 
 .advantages__list {
     background: var(--white);
-    padding: 50px;
+    padding: 3.125rem;
 }
 
 .list__item {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 10px 20px;
-    margin-bottom: 40px;
+    gap: 0.625rem 1.25rem;
+    margin-bottom: 2.5rem;
+    padding: 20px;
+    border-left: 4px solid transparent;
+}
+
+.list__item:nth-child(odd) {
+    background: var(--cinza-fundo);
+}
+
+.list__item:hover {
+    border-color: var(--vermelho);
 }
 
 .list__item p {
@@ -102,7 +129,7 @@
 
 .footer {
     width: 100%;
-    padding: 40px;
+    padding: 2.5rem;
     text-align: center;
     background-color: var(--white);
 }
@@ -118,15 +145,15 @@
 body {
     display: grid;
     justify-items: center;
-    gap: 60px;
-    margin-top: 60px;
+    gap: 3.75rem;
+    margin-top: 3.75rem;
 
     font-family: Arial, Helvetica, sans-serif;
     background: var(--cinza-fundo);
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.3;
 }
 
